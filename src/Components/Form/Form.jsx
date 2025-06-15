@@ -1,16 +1,23 @@
 import React from 'react';
 import useInputField from '../../Hooks/formHook';
 
-const Form = () => {
+const Form = ({handleAddinfo}) => {
 
     const [name , nameOnChange] = useInputField('');
-    const [adress , adressOnChange] = useInputField('')
+    const [address , adressOnChange] = useInputField('')
     const [bloodGroup , bloodGroupOnChange] = useInputField('')
     const [number , numberOnChange] = useInputField('');
 
     const HandleOnSubmit = e => {
         e.preventDefault();
-        console.log(name , adress , bloodGroup , number) ;
+        const newUpdate = {
+            name,
+            address,
+            bloodGroup,
+            number
+        }
+        handleAddinfo(newUpdate);
+        //console.log(newUpdate)
     }
 
 
@@ -29,6 +36,7 @@ const Form = () => {
                 <h2>Contact Number:</h2>
                 <input type="number" name="" id="" className='bg-white input text-black' onChange={numberOnChange} />
                 <br />
+                <br />;
                 <input className='btn bg-gray-400' type="submit" value="Submit" />
             </form>
         </div>
