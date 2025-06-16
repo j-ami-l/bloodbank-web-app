@@ -36,7 +36,7 @@ const Form = ({handleAddinfo}) => {
                 <h2>Contact Number:</h2>
                 <input type="number" name="" id="" className='bg-white input text-black' onChange={numberOnChange} />
                 <br />
-                <br />;
+                <br />
                 <input className='btn bg-gray-400' type="submit" value="Submit" />
             </form>
         </div>
