@@ -1,23 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router'
-import LoginPage from './Components/LoginPage/LoginPage.jsx'
-import Root from './Components/Root/Root.jsx'
-import ActiveArea from './Components/ActiveArea/ActiveArea.jsx'
-
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    Component: Root,
-  },
-  {
-    path: '/mainPage',
-    Component: ActiveArea
-  }
-]);
+import { BrowserRouter, RouterProvider } from 'react-router'
+import { router } from './Routes/Routes'
 
 
 
@@ -25,6 +10,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router} ></RouterProvider>
   </StrictMode>
 )
